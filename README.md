@@ -242,9 +242,17 @@ Supported endpoints:
 
 - `GET /v1/models`
 - `GET /v1/models/deepseek-v4-flash`
+- `POST /v1/responses`
 - `POST /v1/chat/completions`
 - `POST /v1/completions`
 - `POST /v1/messages`
+
+`/v1/responses` accepts the Codex/OpenAI Responses API request shape with
+`instructions`, `input`, `tools`, `tool_choice`, `max_output_tokens`,
+`temperature`, `top_p`, `top_k`, `min_p`, `seed`, `stream`, `stop`, and
+`reasoning`. Function tools are rendered into DSML; unsupported native tool
+types are ignored by the model prompt. Streaming replies are emitted as
+Responses API SSE events.
 
 `/v1/chat/completions` accepts the usual OpenAI-style `messages`,
 `max_tokens`/`max_completion_tokens`, `temperature`, `top_p`, `top_k`, `min_p`,
