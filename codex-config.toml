@@ -1,0 +1,14 @@
+model_catalog_json = "/path/to/.codex/model-catalog-with-ds4.json"
+
+[model_providers.ds4]
+name = "ds4"
+base_url = "http://localhost:8000/v1"
+wire_api = "responses"
+
+[profiles.ds4]
+model_provider = "ds4"
+model = "deepseek-v4-flash"
+
+model_context_window = 200000
+model_max_output_tokens = 8192
+model_reasoning_effort = "low" 
